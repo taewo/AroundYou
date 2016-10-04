@@ -2,12 +2,45 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>AroundYou - GreenFiled Project</title>
+<title>Around You - GreenFiled Project</title>
 <link rel="stylesheet" href="./../src/styles/style.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  var marker;
+
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 17,
+      center: {
+        lat: 37.494826,
+        lng: 127.030685
+      }
+    });
+
+    marker = new google.maps.Marker({
+      map: map,
+      draggable: true,
+      animation: google.maps.Animation.DROP,
+      position: {
+        lat: 37.494826,
+        lng: 127.030685
+      }
+    });
+    marker.addListener('click', toggleBounce);
+  }
+
+  function toggleBounce() {
+    if (marker.getAnimation() !== null) {
+      marker.setAnimation(null);
+    } else {
+      marker.setAnimation(google.maps.Animation.BOUNCE);
+    }
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg&signed_in=true&callback=initMap"></script>
 <!-- <script type="text/babel" src="./../src/index.js"></script> -->
 </head>
 <body>
@@ -15,28 +48,27 @@
   <div id="header">
     <div id="outer">
       <div id="inner">
-        AroundYou
+        <h1>Around You</h1>
+        <i>CodeStates GreenField Project</i>
       </div>
     </div>
   </div>
-  <div id="videomap">
-    Map
-  </div>
+  <div id="map"></div>
   <div id="video">
     <div id="information">
-      informaion
+      Video Informaion
     </div>
     <div id="player">
-      player
+      Video Source
     </div>
   </div>
   <div id="compare"></div>
   <div id="footer">
     <div id="outer">
       <div id="inner">
-        copyright(c)
+        <b>© 2016 shakedownflight</b>
       </div>
-    </div>    
+    </div>
   </div>
 </div>
 <!-- <div id="content"></div> -->
