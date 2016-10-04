@@ -1,0 +1,63 @@
+html,body {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+#inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#wrap {
+  width: 100%;
+  margin: auto;
+}
+
+#header {
+  height: 100px;
+  text-align: center;
+  background-color: #d7d7d7;
+}
+
+#videomap {
+  height: 600px;
+  text-align: center;
+  background-color: #e7e7e7;
+}
+
+#video {
+}
+
+#information {
+  height: 200px;
+  width: 50%;
+  float: left;
+  background-color: #d7d7d7;
+}
+
+#player {
+  height: 200px;
+  width: 50%;
+  float: left;
+}
+
+#compare {
+  clear: both;
+}
+
+#footer {
+  height: 50px;
+  text-align: center;
+  background-color: #e7e7e7;
+}
