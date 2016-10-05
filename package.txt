@@ -13,7 +13,7 @@ module.exports = {
     },
     devServer: {
         inline: true,
-        port: 7777,
+        port: 8080,
         contentBase: __dirname + '/public/'
     },
     module: {
@@ -38,4 +38,10 @@ module.exports = {
 
 // 5번 webpack-dev-server 구동 터미널에서 npm start
 
-// 6번 
+// 6번 크롬에서 http://localhost:8080/ 입력
+
+// 7번 css 사용을 하려면
+npm install --save-dev style-loader css-loader
+
+// 8번 구글 맵 사용을 위한
+npm install --save react-gmaps

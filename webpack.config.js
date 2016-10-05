@@ -8,7 +8,7 @@ module.exports = {
 
     devServer: {
         inline: true,
-        port: 7777,
+        port: 8080,
         contentBase: __dirname + '/client/public/'
     },
 
