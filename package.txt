@@ -1,0 +1,39 @@
+// 1번 터미널에서
+npm install --save react react-dom
+
+// 2번 터미널에서
+npm install --save-dev babel-core babel-loader babel-preset-react babel-preset-es2015 webpack webpack-dev-server
+
+// 3번 루트에 webpack.config.js 파일을 만들고 아래 내용 삽입
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        path: __dirname + '/public/',
+        filename: 'bundle.js'
+    },
+    devServer: {
+        inline: true,
+        port: 7777,
+        contentBase: __dirname + '/public/'
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/,
+                query: {
+                    cacheDirectory: true,
+                    presets: ['es2015', 'react']
+                }
+            }
+        ]
+    }
+};
+
+// 4번 webpack devserver 가 실행 될 수 있도록 package.json 파일을 수정
+"scripts": {
+  "start": "webpack-dev-server --hot --host 0.0.0.0"
+},
+
+// 5번 webpack-dev-server 구동 터미널에서 npm start 

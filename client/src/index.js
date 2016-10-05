@@ -1,10 +1,6 @@
-var CommentBox = React.createClass({
-  render: function() {
-    return (
-      <div className="commentBox">
-      </div>
-    );
-  }
-});
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
 
-ReactDOM.render(<CommentBox/>,document.getElementById('content'));
+const rootElement = document.getElementById('wrap');
+ReactDOM.render(<App />, rootElement);
