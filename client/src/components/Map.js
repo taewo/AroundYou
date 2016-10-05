@@ -8,7 +8,6 @@ const coords = {
 };
 
 const Map = React.createClass({
-
   onMapCreated(map) {
     map.setOptions({
       disableDefaultUI: true
@@ -21,10 +20,9 @@ const Map = React.createClass({
     console.log('onCloseClick');
   },
   onClick(e) {
-    alert('');
+    alert('클릭 시 .. 정보가 올라올 수 있도록 구성해 주세요.');
     console.log('onClick', e);
   },
-
   render() {
     return (
       <Gmaps
@@ -42,16 +40,6 @@ const Map = React.createClass({
           draggable={true}
           onClick={this.onClick}
           onDragEnd={this.onDragEnd} />
-        {/*<InfoWindow
-          lat={coords.lat}
-          lng={coords.lng}
-          content={'Here, CodeStates)'}
-          onCloseClick={this.onCloseClick} />
-        <Circle
-          lat={coords.lat}
-          lng={coords.lng}
-          radius={500}
-          onClick={this.onClick} />*/}
       </Gmaps>
     );
   }

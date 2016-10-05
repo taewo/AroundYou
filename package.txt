@@ -45,3 +45,4 @@ npm install --save-dev style-loader css-loader
 
 // 8번 구글 맵 사용을 위한
 npm install --save react-gmaps
+https://www.npmjs.com/package/react-gmaps
