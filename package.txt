@@ -36,4 +36,6 @@ module.exports = {
   "start": "webpack-dev-server --hot --host 0.0.0.0"
 },
 
-// 5번 webpack-dev-server 구동 터미널에서 npm start 
+// 5번 webpack-dev-server 구동 터미널에서 npm start
+
+// 6번 
