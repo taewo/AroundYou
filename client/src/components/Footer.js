@@ -1,12 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-const Footer = () => {
-  return (
-    <div>
-      © 2016 shakedownflight
-    </div>
-  );
+class Footer extends React.Component{
+  render(){
+    return (
+      <div>
+        {this.props.title}
+      </div>
+    )
+  };
 };
 
 export default Footer;
+
+// const Footer = () => {
+//   return (
+//     <div>
+//       © 2016 shakedownflight
+//     </div>
+//   );
+// };

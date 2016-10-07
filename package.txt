@@ -43,6 +43,41 @@ module.exports = {
 // 7번 css 사용을 하려면
 npm install --save-dev style-loader css-loader
 
-// 8번 구글 맵 사용을 위한
+// 8번 맵 사용을 위한
 npm install --save react-gmaps
 https://www.npmjs.com/package/react-gmaps
+
+// 9번 express 및 data parser 를 위한 설치
+npm install --save express body-parser
+
+// 10번 react-hot-loader 설치
+npm install --save-dev react-hot-loader
+
+// 11번 babel-cli 설정
+.babelrc 파일을 만들고 아래 내용 작성
+{
+  "presets" : ["es2015"]
+}
+
+// 12번 서버사이드 코드 컴파일 하기
+babel server --out-dir build
+
+// 13번 코드 컴파일 후 브라우저에서 localhost:3000 확인
+
+// 14번 webpack 실행하면 코드 컴파일 후 합쳐점
+
+// 기타
+JSX
+Flex Layout
+Inline Style
+React Hot Loader
+
+// 질문 1번 차이점?
+const Header = () => {
+class Header extends React.Component{
+
+// 질문 2번 안되는 이유?
+sayHey = () => {
+  console.log("click ok");
+  alert('hey');
+};

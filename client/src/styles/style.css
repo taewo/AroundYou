@@ -35,6 +35,7 @@ html,body {
 #map {
   height: 500px;
   width: 100%;
+  background-color: #d7d7d7;
 }
 
 #information {
