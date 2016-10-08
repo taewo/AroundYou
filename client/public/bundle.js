@@ -21486,11 +21486,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	console.log(_MapData2.default.mapData);
-
-	for (var key in _MapData2.default.mapData) {
-	  console.log(key);
-	}
+	console.log(window.mapData);
 
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
@@ -21529,7 +21525,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { id: 'inner' },
-	              _react2.default.createElement(_Map2.default, null)
+	              _react2.default.createElement(_Map2.default, { mapInfo: window.mapData })
 	            )
 	          )
 	        ),

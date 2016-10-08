@@ -7,11 +7,7 @@ import Footer from './Footer';
 import '!style!css!./../styles/style.css';
 import MapData from './../../data/MapData';
 
-console.log(MapData.mapData);
-
-for(var key in MapData.mapData){
-  console.log(key);
-}
+console.log(window.mapData);
 
 class App extends React.Component{
 
@@ -28,7 +24,7 @@ class App extends React.Component{
         <div id="map">
           <div id="outer">
             <div id="inner">
-              <Map />
+              <Map mapInfo={window.mapData}/>
             </div>
           </div>
         </div >
