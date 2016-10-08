@@ -17,13 +17,3 @@ class VideoInformation extends React.Component{
 };
 
 export default VideoInformation;
-
-// const VideoInformation = (props) => {
-//   let text="textTest";
-//   return (
-//     <div>
-//       <p>{props.title}</p>
-//       {text}
-//     </div>
-//   );
-// };

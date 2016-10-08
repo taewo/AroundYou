@@ -11,11 +11,3 @@ class Footer extends React.Component{
 };
 
 export default Footer;
-
-// const Footer = () => {
-//   return (
-//     <div>
-//       © 2016 shakedownflight
-//     </div>
-//   );
-// };

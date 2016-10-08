@@ -21474,6 +21474,10 @@
 
 	__webpack_require__(194);
 
+	var _MapData = __webpack_require__(198);
+
+	var _MapData2 = _interopRequireDefault(_MapData);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -21482,18 +21486,19 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	console.log(_MapData2.default.mapData);
+
+	for (var key in _MapData2.default.mapData) {
+	  console.log(key);
+	}
+
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 
-	  function App(props) {
+	  function App() {
 	    _classCallCheck(this, App);
 
-	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
-
-	    _this.state = {
-	      mapData: [{ location: '위치1', address: '주소1' }, { location: '위치2', address: '주소2' }, { location: '위치3', address: '주소3' }, { location: '위치4', address: '주소4' }, { location: '위치5', address: '주소5' }]
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
 	  }
 
 	  _createClass(App, [{
@@ -21582,47 +21587,6 @@
 	;
 
 	exports.default = App;
-
-	// const App = () => {
-	//   return (
-	//     <div>
-	//       <div id="header" >
-	//         <div id="outer">
-	//           <div id="inner">
-	//             <Header />
-	//           </div>
-	//         </div>
-	//       </div>
-	//       <div id="map">
-	//         <Map />
-	//       </div >
-	//       <div id="video">
-	//         <div id="information">
-	//           <div id="outer">
-	//             <div id="inner">
-	//                 <VideoInformation title="Video Information"/>
-	//             </div>
-	//           </div>
-	//         </div>
-	//         <div id="player">
-	//           <div id="outer">
-	//             <div id="inner">
-	//               <VideoPlayer title="Video Player"/>
-	//             </div>
-	//           </div>
-	//         </div>
-	//       </div>
-	//       <div id="compare"></div>
-	//       <div id="footer">
-	//         <div id="outer">
-	//           <div id="inner">
-	//               <Footer />
-	//           </div>
-	//         </div>
-	//       </div>
-	//     </div>
-	//   );
-	// };
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "App.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -21714,15 +21678,6 @@
 
 	exports.default = Header;
 
-	// const Header = () => {
-	//   return (
-	//     <div>
-	//       <h1>Around You</h1>
-	//       <i>CodeStates GreenField Project</i>
-	//     </div>
-	//   );
-	// };
-
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Header.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
@@ -21737,6 +21692,8 @@
 	  value: true
 	});
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
@@ -21745,12 +21702,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// const coords = {
-	//   lat: 37.605216,
-	//   lng: 127.317245
-	// };
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var coords = [{ lat: 37.605216, lng: 127.317245 }, { lat: 37.605989, lng: 127.318930 }, { lat: 37.605956, lng: 127.314713 }, { lat: 37.604706, lng: 127.318383 }];
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	// codeddd
 
 	// class Map extends React.Component{
 	//   constructor(props){
@@ -21791,61 +21749,80 @@
 	// };
 
 
-	var Map = _react2.default.createClass({
-	  displayName: 'Map',
-	  onMapCreated: function onMapCreated(map) {
-	    map.setOptions({
-	      disableDefaultUI: true
-	    });
-	  },
-	  onDragEnd: function onDragEnd(e) {
-	    console.log('onDragEnd', e);
-	  },
-	  onCloseClick: function onCloseClick() {
-	    console.log('onCloseClick');
-	  },
-	  onClick: function onClick(e) {
-	    console.log('onClick', e);
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      _reactGmaps.Gmaps,
-	      {
-	        width: '100%',
-	        height: '100%',
-	        lat: coords[0].lat,
-	        lng: coords[0].lng,
-	        zoom: 17,
-	        loadingMessage: 'Be happy',
-	        params: { v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg' },
-	        onMapCreated: this.onMapCreated },
-	      _react2.default.createElement(_reactGmaps.Marker, {
-	        lat: coords[0].lat,
-	        lng: coords[0].lng,
-	        draggable: true,
-	        onClick: this.onClick,
-	        onDragEnd: this.onDragEnd }),
-	      _react2.default.createElement(_reactGmaps.Marker, {
-	        lat: coords[1].lat,
-	        lng: coords[1].lng,
-	        draggable: true,
-	        onClick: this.onClick,
-	        onDragEnd: this.onDragEnd }),
-	      _react2.default.createElement(_reactGmaps.Marker, {
-	        lat: coords[2].lat,
-	        lng: coords[2].lng,
-	        draggable: true,
-	        onClick: this.onClick,
-	        onDragEnd: this.onDragEnd }),
-	      _react2.default.createElement(_reactGmaps.Marker, {
-	        lat: coords[3].lat,
-	        lng: coords[3].lng,
-	        draggable: true,
-	        onClick: this.onClick,
-	        onDragEnd: this.onDragEnd })
-	    );
+	// const coords = [
+	//   {lat: 37.605216, lng: 127.317245},
+	//   {lat: 37.605989, lng: 127.318930},
+	//   {lat: 37.605956, lng: 127.314713},
+	//   {lat: 37.604706, lng: 127.318383}
+	// ];
+
+	var Map = function (_React$Component) {
+	  _inherits(Map, _React$Component);
+
+	  function Map(props) {
+	    _classCallCheck(this, Map);
+
+	    var _this = _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).call(this, props));
+
+	    _this.state = {
+	      mapData: [{ lat: 37.605216, lng: 127.317245 }, { lat: 37.605989, lng: 127.318930 }, { lat: 37.605956, lng: 127.314713 }, { lat: 37.604706, lng: 127.318383 }]
+	    };
+	    return _this;
 	  }
-	});
+
+	  _createClass(Map, [{
+	    key: 'onMapCreated',
+	    value: function onMapCreated(map) {
+	      map.setOptions({
+	        disableDefaultUI: true
+	      });
+	    }
+	  }, {
+	    key: 'onDragEnd',
+	    value: function onDragEnd(e) {}
+	  }, {
+	    key: 'onClick',
+	    value: function onClick(e) {
+	      console.log('onClick', e);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        _reactGmaps.Gmaps,
+	        {
+	          width: '100%',
+	          height: '100%'
+	          // lat={coords[0].lat}
+	          // lng={coords[0].lng}
+	          , lat: '37.605216',
+	          lng: '127.317245',
+	          zoom: 17,
+	          loadingMessage: 'Be happy',
+	          params: { v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg' },
+	          onMapCreated: this.onMapCreated },
+	        this.state.mapData.map(function (map, i) {
+	          return _react2.default.createElement(_reactGmaps.Marker, { lat: map.lat, lng: map.lng, key: i });
+	        }),
+	        ';'
+	      );
+	    }
+	  }]);
+
+	  return Map;
+	}(_react2.default.Component);
+
+	;
+
+	// class MapInfo extends React.Component {
+	//   render(){
+	//     return(
+	//       <div>
+	//         {this.props.lat} {this.props.lng}
+	//       </div>
+	//     )
+	//   };
+	// };
 
 	exports.default = Map;
 
@@ -22571,7 +22548,7 @@
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -22594,22 +22571,27 @@
 	var VideoInformation = function (_React$Component) {
 	  _inherits(VideoInformation, _React$Component);
 
-	  function VideoInformation() {
+	  function VideoInformation(props) {
 	    _classCallCheck(this, VideoInformation);
 
-	    return _possibleConstructorReturn(this, (VideoInformation.__proto__ || Object.getPrototypeOf(VideoInformation)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (VideoInformation.__proto__ || Object.getPrototypeOf(VideoInformation)).call(this, props));
+
+	    _this.state = {
+	      VideoInformationTitle: "Video Information Title"
+	    };
+	    return _this;
 	  }
 
 	  _createClass(VideoInformation, [{
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(
-	          'h1',
+	          "h1",
 	          null,
-	          'Video Information'
+	          this.state.VideoInformationTitle
 	        )
 	      );
 	    }
@@ -22621,16 +22603,6 @@
 	;
 
 	exports.default = VideoInformation;
-
-	// const VideoInformation = (props) => {
-	//   let text="textTest";
-	//   return (
-	//     <div>
-	//       <p>{props.title}</p>
-	//       {text}
-	//     </div>
-	//   );
-	// };
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "VideoInformation.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -22691,13 +22663,6 @@
 
 	exports.default = VideoPlayer;
 
-	// const VideoPlayer = (props) => {
-	//   return (
-	//     <div>
-	//     </div>
-	//   );
-	// };
-
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "VideoPlayer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ },
@@ -22752,14 +22717,6 @@
 	;
 
 	exports.default = Footer;
-
-	// const Footer = () => {
-	//   return (
-	//     <div>
-	//       © 2016 shakedownflight
-	//     </div>
-	//   );
-	// };
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Footer.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -23110,6 +23067,18 @@
 			URL.revokeObjectURL(oldSrc);
 	}
 
+
+/***/ },
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	"use strict";
+
+	window.mapData = [{ "lat": "37.605216", "lng": "127.317245" }, { "lat": "37.605989", "lng": "127.318930" }, { "lat": "37.605956", "lng": "127.314713" }, { "lat": "37.604706", "lng": "127.318383" }];
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "MapData.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }
 /******/ ]);

@@ -71,13 +71,3 @@ JSX
 Flex Layout
 Inline Style
 React Hot Loader
-
-// 질문 1번 차이점?
-const Header = () => {
-class Header extends React.Component{
-
-// 질문 2번 안되는 이유?
-sayHey = () => {
-  console.log("click ok");
-  alert('hey');
-};

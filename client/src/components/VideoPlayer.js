@@ -11,10 +11,3 @@ class VideoPlayer extends React.Component{
 };
 
 export default VideoPlayer;
-
-// const VideoPlayer = (props) => {
-//   return (
-//     <div>
-//     </div>
-//   );
-// };

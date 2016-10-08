@@ -1,5 +1,7 @@
 import React from 'react';
 
+// codeddd
+
 // class Map extends React.Component{
 //   constructor(props){
 //     super(props);
@@ -39,21 +41,24 @@ import React from 'react';
 // };
 import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
 
-// const coords = {
-//   lat: 37.605216,
-//   lng: 127.317245
-// };
-
-const coords = [
-  {lat: 37.605216, lng: 127.317245},
-  {lat: 37.605989, lng: 127.318930},
-  {lat: 37.605956, lng: 127.314713},
-  {lat: 37.604706, lng: 127.318383}
-];
+// const coords = [
+//   {lat: 37.605216, lng: 127.317245},
+//   {lat: 37.605989, lng: 127.318930},
+//   {lat: 37.605956, lng: 127.314713},
+//   {lat: 37.604706, lng: 127.318383}
+// ];
 
 class Map extends React.Component {
   constructor(props){
       super(props);
+      this.state = {
+        mapData : [
+          {lat: 37.605216, lng: 127.317245},
+          {lat: 37.605989, lng: 127.318930},
+          {lat: 37.605956, lng: 127.314713},
+          {lat: 37.604706, lng: 127.318383}
+        ]
+      };
   };
 
   onMapCreated(map) {
@@ -73,17 +78,27 @@ class Map extends React.Component {
       <Gmaps
         width={'100%'}
         height={'100%'}
-        lat={coords[0].lat}
-        lng={coords[0].lng}
+        // lat={coords[0].lat}
+        // lng={coords[0].lng}
+        lat="37.605216"
+        lng="127.317245"
         zoom={17}
         loadingMessage={'Be happy'}
         params={{v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg'}}
         onMapCreated={this.onMapCreated}>
-        <Marker
-          lat={coords[0].lat}
-          lng={coords[0].lng}
+
+        {/*{coords.map((map,i) => {
+          return (<Marker lat={map.lat} lng={map.lng} key={i}/>);
+        })};*/}
+
+        {this.state.mapData.map((map,i) => {
+          return (<Marker lat={map.lat} lng={map.lng} key={i}/>);
+        })};
+
+        {/*<Marker
+          lat={mapData.lat}
+          lng={mapData.lng}
           draggable={true}
-          content={'Hello, React :)'}
           onClick={this.onClick}
           onDragEnd={this.onDragEnd} />
         <Marker
@@ -103,10 +118,20 @@ class Map extends React.Component {
           lng={coords[3].lng}
           draggable={true}
           onClick={this.onClick}
-          onDragEnd={this.onDragEnd} />
+          onDragEnd={this.onDragEnd} />*/}
       </Gmaps>
     );
   };
 };
+
+// class MapInfo extends React.Component {
+//   render(){
+//     return(
+//       <div>
+//         {this.props.lat} {this.props.lng}
+//       </div>
+//     )
+//   };
+// };
 
 export default Map;
