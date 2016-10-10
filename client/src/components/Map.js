@@ -1,65 +1,12 @@
 import React from 'react';
-
-// codeddd
-
-// class Map extends React.Component{
-//   constructor(props){
-//     super(props);
-//     this.state = {
-//       mapData : [
-//         {location : '위치1', address : '주소1'},
-//         {location : '위치2', address : '주소2'},
-//         {location : '위치3', address : '주소3'},
-//         {location : '위치4', address : '주소4'},
-//         {location : '위치5', address : '주소5'}
-//       ]
-//     };
-//   };
-//
-//   render(){
-//     return (
-//       <div>
-//         <h1>MAP INFORMATION</h1>
-//         <i>
-//           {this.state.mapData.map((map, i) => {
-//             return (<MapInfo location={map.location} address={map.address} key={i}/>);
-//           })}
-//         </i>
-//       </div>
-//     )
-//   };
-// };
-//
-// class MapInfo extends React.Component {
-//   render(){
-//     return(
-//       <div>
-//         {this.props.location} {this.props.address}
-//       </div>
-//     )
-//   };
-// };
-import {Gmaps, Marker, InfoWindow, Circle} from 'react-gmaps';
-
-// const coords = [
-//   {lat: 37.605216, lng: 127.317245},
-//   {lat: 37.605989, lng: 127.318930},
-//   {lat: 37.605956, lng: 127.314713},
-//   {lat: 37.604706, lng: 127.318383}
-// ];
+import {Gmaps, Marker} from 'react-gmaps';
 
 class Map extends React.Component {
-  constructor(props){
-      super(props);
-      this.state = {
-        mapData : [
-          {lat: 37.605216, lng: 127.317245},
-          {lat: 37.605989, lng: 127.318930},
-          {lat: 37.605956, lng: 127.314713},
-          {lat: 37.604706, lng: 127.318383}
-        ]
-      };
-  };
+
+  constructor(props) {
+    super(props);
+    this.mapClick = this.mapClick.bind(this);
+  }
 
   onMapCreated(map) {
     map.setOptions({
@@ -67,10 +14,9 @@ class Map extends React.Component {
     });
   };
 
-  onDragEnd(e) {};
-
-  onClick(e) {
-    console.log('onClick', e);
+  mapClick(event, map){
+    // console.log("map clicked", event, map);
+    this.props.onClick(event, map);
   };
 
   render() {
@@ -78,23 +24,15 @@ class Map extends React.Component {
       <Gmaps
         width={'100%'}
         height={'100%'}
-        // lat={coords[0].lat}
-        // lng={coords[0].lng}
-        lat="37.605216"
-        lng="127.317245"
+        lat={this.props.marker[0].lat}
+        lng={this.props.marker[0].lng}
         zoom={17}
-        loadingMessage={'Be happy'}
+        loadingMessage={'welcome! codestates'}
         params={{v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg'}}
         onMapCreated={this.onMapCreated}>
-
-        {/*{coords.map((map,i) => {
-          return (<Marker lat={map.lat} lng={map.lng} key={i}/>);
-        })};*/}
-
-        {this.state.mapData.map((map,i) => {
-          return (<Marker lat={map.lat} lng={map.lng} key={i}/>);
+        {this.props.marker.map((map,i) => {
+          return (<Marker lat={map.lat} lng={map.lng} key={i} onClick={this.mapClick.bind(this, {map})}/>);
         })};
-
         {/*<Marker
           lat={mapData.lat}
           lng={mapData.lng}
@@ -122,16 +60,7 @@ class Map extends React.Component {
       </Gmaps>
     );
   };
-};
 
-// class MapInfo extends React.Component {
-//   render(){
-//     return(
-//       <div>
-//         {this.props.lat} {this.props.lng}
-//       </div>
-//     )
-//   };
-// };
+};
 
 export default Map;

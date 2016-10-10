@@ -21486,15 +21486,18 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	console.log(window.mapData);
-
 	var App = function (_React$Component) {
 	  _inherits(App, _React$Component);
 
-	  function App() {
+	  function App(props) {
 	    _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+	    _this.state = {
+	      mapList: window.mapMarker
+	    };
+	    return _this;
 	  }
 
 	  _createClass(App, [{
@@ -21525,7 +21528,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { id: 'inner' },
-	              _react2.default.createElement(_Map2.default, { mapInfo: window.mapData })
+	              _react2.default.createElement(_Map2.default, { marker: this.state.mapList })
 	            )
 	          )
 	        ),
@@ -21541,7 +21544,7 @@
 	              _react2.default.createElement(
 	                'div',
 	                { id: 'inner' },
-	                _react2.default.createElement(_VideoInformation2.default, null)
+	                _react2.default.createElement(_VideoInformation2.default, { markerInfo: this.state.mapList[0] })
 	              )
 	            )
 	          ),
@@ -21554,7 +21557,7 @@
 	              _react2.default.createElement(
 	                'div',
 	                { id: 'inner' },
-	                _react2.default.createElement(_VideoPlayer2.default, null)
+	                _react2.default.createElement(_VideoPlayer2.default, { markerInfo: this.state.mapList[0] })
 	              )
 	            )
 	          )
@@ -21615,7 +21618,6 @@
 	var Header = function (_React$Component) {
 	  _inherits(Header, _React$Component);
 
-	  // state 기본 값 설정
 	  function Header(props) {
 	    _classCallCheck(this, Header);
 
@@ -21629,9 +21631,6 @@
 
 	  _createClass(Header, [{
 	    key: "updateHeaderSmallTitle",
-
-
-	    // state 값 변경
 	    value: function updateHeaderSmallTitle(text) {
 	      this.setState({
 	        headerSmallTitle: "CodeStates GreenField Project"
@@ -21662,12 +21661,10 @@
 
 	;
 
-	// 기본 값 설정하기
 	Header.defaultProps = {
 	  headerBigTitle: "Around You"
 	};
 
-	// Type 검사하기
 	Header.propTypes = {
 	  headerBigTitle: _react2.default.PropTypes.string
 	};
@@ -21704,66 +21701,13 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	// codeddd
-
-	// class Map extends React.Component{
-	//   constructor(props){
-	//     super(props);
-	//     this.state = {
-	//       mapData : [
-	//         {location : '위치1', address : '주소1'},
-	//         {location : '위치2', address : '주소2'},
-	//         {location : '위치3', address : '주소3'},
-	//         {location : '위치4', address : '주소4'},
-	//         {location : '위치5', address : '주소5'}
-	//       ]
-	//     };
-	//   };
-	//
-	//   render(){
-	//     return (
-	//       <div>
-	//         <h1>MAP INFORMATION</h1>
-	//         <i>
-	//           {this.state.mapData.map((map, i) => {
-	//             return (<MapInfo location={map.location} address={map.address} key={i}/>);
-	//           })}
-	//         </i>
-	//       </div>
-	//     )
-	//   };
-	// };
-	//
-	// class MapInfo extends React.Component {
-	//   render(){
-	//     return(
-	//       <div>
-	//         {this.props.location} {this.props.address}
-	//       </div>
-	//     )
-	//   };
-	// };
-
-
-	// const coords = [
-	//   {lat: 37.605216, lng: 127.317245},
-	//   {lat: 37.605989, lng: 127.318930},
-	//   {lat: 37.605956, lng: 127.314713},
-	//   {lat: 37.604706, lng: 127.318383}
-	// ];
-
 	var Map = function (_React$Component) {
 	  _inherits(Map, _React$Component);
 
-	  function Map(props) {
+	  function Map() {
 	    _classCallCheck(this, Map);
 
-	    var _this = _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).call(this, props));
-
-	    _this.state = {
-	      mapData: [{ lat: 37.605216, lng: 127.317245 }, { lat: 37.605989, lng: 127.318930 }, { lat: 37.605956, lng: 127.314713 }, { lat: 37.604706, lng: 127.318383 }]
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).apply(this, arguments));
 	  }
 
 	  _createClass(Map, [{
@@ -21774,9 +21718,6 @@
 	      });
 	    }
 	  }, {
-	    key: 'onDragEnd',
-	    value: function onDragEnd(e) {}
-	  }, {
 	    key: 'onClick',
 	    value: function onClick(e) {
 	      console.log('onClick', e);
@@ -21784,21 +21725,21 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+
 	      return _react2.default.createElement(
 	        _reactGmaps.Gmaps,
 	        {
 	          width: '100%',
-	          height: '100%'
-	          // lat={coords[0].lat}
-	          // lng={coords[0].lng}
-	          , lat: '37.605216',
-	          lng: '127.317245',
+	          height: '100%',
+	          lat: this.props.marker[0].lat,
+	          lng: this.props.marker[0].lng,
 	          zoom: 17,
-	          loadingMessage: 'Be happy',
+	          loadingMessage: 'welcome! codestates',
 	          params: { v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg' },
 	          onMapCreated: this.onMapCreated },
-	        this.state.mapData.map(function (map, i) {
-	          return _react2.default.createElement(_reactGmaps.Marker, { lat: map.lat, lng: map.lng, key: i });
+	        this.props.marker.map(function (map, i) {
+	          return _react2.default.createElement(_reactGmaps.Marker, { lat: map.lat, lng: map.lng, key: i, onClick: _this2.onClick });
 	        }),
 	        ';'
 	      );
@@ -21809,16 +21750,6 @@
 	}(_react2.default.Component);
 
 	;
-
-	// class MapInfo extends React.Component {
-	//   render(){
-	//     return(
-	//       <div>
-	//         {this.props.lat} {this.props.lng}
-	//       </div>
-	//     )
-	//   };
-	// };
 
 	exports.default = Map;
 
@@ -22544,7 +22475,7 @@
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -22567,27 +22498,27 @@
 	var VideoInformation = function (_React$Component) {
 	  _inherits(VideoInformation, _React$Component);
 
-	  function VideoInformation(props) {
+	  function VideoInformation() {
 	    _classCallCheck(this, VideoInformation);
 
-	    var _this = _possibleConstructorReturn(this, (VideoInformation.__proto__ || Object.getPrototypeOf(VideoInformation)).call(this, props));
-
-	    _this.state = {
-	      VideoInformationTitle: "Video Information Title"
-	    };
-	    return _this;
+	    return _possibleConstructorReturn(this, (VideoInformation.__proto__ || Object.getPrototypeOf(VideoInformation)).apply(this, arguments));
 	  }
 
 	  _createClass(VideoInformation, [{
-	    key: "render",
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
+	        'div',
 	        null,
 	        _react2.default.createElement(
-	          "h1",
+	          'h1',
 	          null,
-	          this.state.VideoInformationTitle
+	          this.props.markerInfo.title
+	        ),
+	        _react2.default.createElement(
+	          'i',
+	          null,
+	          this.props.markerInfo.introduce
 	        )
 	      );
 	    }
@@ -22643,11 +22574,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Video Player'
-	        )
+	        this.props.markerInfo.src
 	      );
 	    }
 	  }]);
@@ -23072,7 +22999,7 @@
 
 	"use strict";
 
-	window.mapData = [{ "lat": "37.605216", "lng": "127.317245" }, { "lat": "37.605989", "lng": "127.318930" }, { "lat": "37.605956", "lng": "127.314713" }, { "lat": "37.604706", "lng": "127.318383" }];
+	window.mapMarker = [{ "lat": "37.605216", "lng": "127.317245", "title": "남양주 영화 촬영소", "introduce": "남양주 영화 촬영소를 소개 합니다.", "src": "소스1" }, { "lat": "37.605989", "lng": "127.318930", "title": "제목2", "introduce": "소개2", "src": "소스2" }, { "lat": "37.605956", "lng": "127.314713", "title": "제목3", "introduce": "소개3", "src": "소스3" }, { "lat": "37.604706", "lng": "127.318383", "title": "제목4", "introduce": "소개4", "src": "소스4" }];
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/shinminho/Education/Bootcamp.CodeState/CodeStatesImmersive/Group.Project/GreenFieldProject/aroundyou_v1.0/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "MapData.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 

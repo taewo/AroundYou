@@ -11,7 +11,7 @@ module.exports = {
         port: 8080,
         contentBase: __dirname + '/client/public/'
     },
-    
+
     module: {
             loaders: [
                 {

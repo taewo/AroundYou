@@ -7,9 +7,22 @@ import Footer from './Footer';
 import '!style!css!./../styles/style.css';
 import MapData from './../../data/MapData';
 
-console.log(window.mapData);
-
 class App extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      mapList : window.mapMarker,
+      mapNow : window.mapMarker[0]
+    };
+    this.mapClick = this.mapClick.bind(this);
+  };
+
+  mapClick(event, map){
+    // console.log("app clicked", event, map);
+    // console.log(event.map);
+    this.setState({mapNow: event.map});
+  }
 
   render(){
     return (
@@ -24,7 +37,7 @@ class App extends React.Component{
         <div id="map">
           <div id="outer">
             <div id="inner">
-              <Map mapInfo={window.mapData}/>
+              <Map marker={this.state.mapList} onClick={this.mapClick}/>
             </div>
           </div>
         </div >
@@ -32,14 +45,14 @@ class App extends React.Component{
           <div id="information">
             <div id="outer">
               <div id="inner">
-                  <VideoInformation />
+                  <VideoInformation markerInfo={this.state.mapNow} />
               </div>
             </div>
           </div>
           <div id="player">
             <div id="outer">
               <div id="inner">
-                <VideoPlayer />
+                <VideoPlayer markerInfo={this.state.mapNow} />
               </div>
             </div>
           </div>
@@ -55,6 +68,7 @@ class App extends React.Component{
       </div>
     )
   };
+
 };
 
 export default App;
