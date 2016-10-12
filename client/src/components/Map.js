@@ -14,6 +14,10 @@ class Map extends React.Component {
     });
   };
 
+  onDragEnd(e) {
+    console.log('onDragEnd', e.pixel);
+  }
+
   mapClick(event, map){
     // console.log("map clicked", event, map);
     this.props.onClick(event, map);
@@ -24,15 +28,18 @@ class Map extends React.Component {
       <Gmaps
         width={'100%'}
         height={'100%'}
-        lat={this.props.marker[0].lat}
-        lng={this.props.marker[0].lng}
+        lat={37.583003} // 북촌 위도
+        lng={126.985071} // 북촌 경도
         zoom={17}
-        loadingMessage={'welcome! codestates'}
+        loadingMessage={'Loading Araound Maps'}
         params={{v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg'}}
         onMapCreated={this.onMapCreated}>
+        <Marker lat={37.581770} lng={126.985966} draggable={true} onDragEnd={this.onDragEnd} />
         {this.props.marker.map((map,i) => {
-          return (<Marker lat={map.lat} lng={map.lng} key={i} onClick={this.mapClick.bind(this, {map})}/>);
+          return (<Marker lat={map.lat} lng={map.lng} key={i} onClick={this.mapClick.bind(this, {map})} />);
         })};
+        
+
         {/*<Marker
           lat={mapData.lat}
           lng={mapData.lng}
