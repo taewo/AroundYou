@@ -26,8 +26,10 @@ html,body {
   margin: auto;
 }
 #header {
+
   height: 125px;
   width: 100%;
+
   color: white;
   text-align: center;
 }
@@ -45,7 +47,8 @@ html,body {
 #map {
   height: 500px;
   width: 100%;
-  background-color: #d7d7d7;
+  background-color: #ffffff;
+  text-align: center;
 }
 
 #upload {
