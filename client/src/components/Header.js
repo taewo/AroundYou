@@ -11,6 +11,7 @@ class Header extends React.Component{
   render(){
     return (
       <div>
+
         <h1>{this.state.headerBigTitle}</h1>
         <i>CodeStates GreenField Project</i>
 
@@ -19,6 +20,5 @@ class Header extends React.Component{
   };
 
 };
-
 
 export default Header;
