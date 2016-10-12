@@ -14,6 +14,10 @@ class Map extends React.Component {
     });
   };
 
+  onDragEnd(e) {
+    console.log('onDragEnd', e.pixel);
+  }
+
   mapClick(event, map){
     // console.log("map clicked", event, map);
     this.props.onClick(event, map);
@@ -31,7 +35,7 @@ class Map extends React.Component {
         params={{v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg'}}
         onMapCreated={this.onMapCreated}>
         {this.props.marker.map((map,i) => {
-          return (<Marker lat={map.lat} lng={map.lng} key={i} onClick={this.mapClick.bind(this, {map})}/>);
+          return (<Marker lat={map.lat} lng={map.lng} key={i} onClick={this.mapClick.bind(this, {map})}  draggable={true} onDragEnd={this.onDragEnd} />);
         })};
         {/*<Marker
           lat={mapData.lat}
