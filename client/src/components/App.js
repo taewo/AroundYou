@@ -9,7 +9,6 @@ import MapData from './../../data/MapData';
 import Login from './Login';
 
 class App extends React.Component{
-//
   constructor(props){
     super(props);
     this.state = {

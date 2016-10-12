@@ -12,14 +12,18 @@ app.get('/test', function(req, res){
   res.send('test');
 });
 
-
 // app.get('/hello', (req, res) => {
 //   return res.send("Can you hear me?");
 // });
 //
 // import posts from './routes/posts';
 // app.use('/posts', posts);
-
 const server = app.listen(app.get("port"), () => {
   console.log("Express listening on port", port);
 });
+
+import mongoose from 'mongoose';
+// connect to mongo database named "myDB"
+mongoose.connect('mongodb://localhost/myDB');
+import mongo from ('./rotes/post.js'); 
+app.use('/', mongo)
