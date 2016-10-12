@@ -5,8 +5,8 @@ class Header extends React.Component{
   render(){
     return (
       <div>
-        <h1>{this.props.headerBigTitle}</h1>
-        <i>CodeStates GreenField Project</i>
+        <h2>{this.props.headerBigTitle}</h2>
+
       </div>
     );
   };
@@ -16,9 +16,5 @@ class Header extends React.Component{
 Header.defaultProps = {
   headerBigTitle : "Around You"
 };
-
-Header.propTypes = {
-  headerBigTitle : React.PropTypes.string
-}
 
 export default Header;
