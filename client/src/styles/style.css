@@ -25,29 +25,39 @@ html,body {
   height: 100%;
   margin: auto;
 }
-
 #header {
   height: 125px;
+  width: 100%;
   color: white;
   text-align: center;
 }
-
+#title {
+  height: 125px;
+  width: 75%;
+  float: left;
+}
+#login {
+  height:125px;
+  width: 25%;
+  float: left;
+  background-color: #d7d7d7;
+}
 #map {
   height: 500px;
   width: 100%;
   background-color: #d7d7d7;
 }
 
-#information {
+#upload {
   height: 250px;
-  width: 50%;
+  width: 20%;
   float: left;
   background-color: #ffffff;
 }
 
-#player {
+#photo {
   height: 250px;
-  width: 50%;
+  width: 20%;
   float: left;
   background-color: #ffffff;
 }

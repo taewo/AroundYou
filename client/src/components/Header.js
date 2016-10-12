@@ -1,24 +1,22 @@
 import React from 'react';
 
 class Header extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      headerBigTitle : "Around You",
+    };
+  };
 
   render(){
     return (
       <div>
-        <h1>{this.props.headerBigTitle}</h1>
+        <h1>{this.state.headerBigTitle}</h1>
         <i>CodeStates GreenField Project</i>
       </div>
     );
   };
 
 };
-
-Header.defaultProps = {
-  headerBigTitle : "Around You"
-};
-
-Header.propTypes = {
-  headerBigTitle : React.PropTypes.string
-}
 
 export default Header;
