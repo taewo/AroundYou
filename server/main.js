@@ -1,8 +1,24 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import router from './routes.js'
+
 const app = express();
-let port = 7777;//원시형의 값을 나중에 변경할 일이 있을떄 let쓴다. 
+app.set("port", 7777);
+
+// [CONFIGURE mongoose]
+// Connect to mongoDB server
+const db = mongoose.connection;
+db.on('err', console.error);
+db.once('open', ()=>{
+	console.log("Connected to mongoDB server!");
+});
+mongoose.connect('mongodb://localhost/')
+
+// Define mongoose Model
+import Pin from '../build/gmaps.js'
 
 app.use(express.static(__dirname + './../client/public'));
+app.use('/', router)
 
 app.get('/', function(req, res){
   res.render('./../client/public/index.html');
@@ -12,14 +28,8 @@ app.get('/test', function(req, res){
   res.send('test');
 });
 
-// app.get('/hello', (req, res) => {
-//   return res.send("Can you hear me?");
-// });
-//
-// import posts from './routes/posts';
-// app.use('/posts', posts);
 const server = app.listen(app.get("port"), () => {
-  console.log("Express listening on port", port);
+  console.log("Express listening on port", app.get("port"));
 });
 
 import mongoose from 'mongoose';
