@@ -14,6 +14,7 @@ class Map extends React.Component {
     });
   };
 
+
   onDragEnd(e) {  //  위경도 콘솔창에 찍어줌.
     console.log('onDragEnd', e.pixel.x);
     // this.props.onClick(e, map);
@@ -21,7 +22,6 @@ class Map extends React.Component {
     //   disableDefaultUI: false
     // });
   };
-
 
   mapClick(event, map){
     // console.log("map clicked", event, map);
@@ -40,13 +40,10 @@ class Map extends React.Component {
         params={{v: '3.exp', key: 'AIzaSyApEhbvTjERHndLY1yOdaAES-Fr8-yPrCg'}}
 
         onMapCreated={this.onMapCreated}>
-
         <Marker lat={37.581770} lng={126.985966} draggable={true} onDragEnd={this.onDragEnd} />
         {this.props.marker.map((map,i) => {
           return (<Marker lat={map.lat} lng={map.lng} key={i} onClick={this.mapClick.bind(this, {map})} />);
-
-        })};
-        
+        })};        
 
         {/*<Marker
           lat={mapData.lat}
