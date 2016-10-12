@@ -17,6 +17,7 @@ var pinSchema = new Schema({
 	lat: Number,
 	lng: Number,
 	username: String,
+	data: { type: Date, default: Date.now },
 	tag: String, // how does input multiple tag?
 	photo: Buffer
 });
@@ -29,7 +30,7 @@ var pinSchema = new Schema({
 // 	lng:126.985183,
 // 	username: "test1",
 // 	tag: "good, bad, nice",
-// 	phtoo:""
+// 	photo:""
 // })
 
 // pin.save((err, pin)=> {

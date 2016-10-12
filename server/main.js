@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import router from './routes.js'
+import path from 'path'
 
 const app = express();
 app.set("port", 7777);
@@ -18,22 +19,10 @@ mongoose.connect('mongodb://localhost/')
 import Pin from '../build/gmaps.js'
 
 app.use(express.static(__dirname + './../client/public'));
-app.use('/', router)
-
-app.get('/', function(req, res){
-  res.render('./../client/public/index.html');
-});
-
-app.get('/test', function(req, res){
-  res.send('test');
-});
+app.use('*', (req, res)=>{
+	res.sendFile(path.resolve(__dirname, '../client/public', 'index.html'))
+})
 
 const server = app.listen(app.get("port"), () => {
   console.log("Express listening on port", app.get("port"));
 });
-
-import mongoose from 'mongoose';
-// connect to mongo database named "myDB"
-mongoose.connect('mongodb://localhost/myDB');
-import mongo from ('./rotes/post.js'); 
-app.use('/', mongo)
