@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Map from './Map';
 import Upload from './Upload';
-import VideoPlayer from './VideoPlayer';
+import Photo from './Photo';
 import Footer from './Footer';
 import '!style!css!./../styles/style.css';
 import MapData from './../../data/MapData';
@@ -66,7 +66,7 @@ class App extends React.Component{
           <div id="photo">
             <div id="outer">
               <div id="inner">
-                <VideoPlayer photoSource={this.state.mapList} />
+                <Photo photoSource={this.state.mapList} />
               </div>
             </div>
           </div>
