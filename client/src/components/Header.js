@@ -13,6 +13,7 @@ class Header extends React.Component{
       <div>
         <h1>{this.state.headerBigTitle}</h1>
         <i>CodeStates GreenField Project</i>
+
       </div>
     );
   };
