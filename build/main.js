@@ -16,6 +16,8 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
+var _reactRouter = require('react-router');
+
 var _gmaps = require('../build/gmaps.js');
 
 var _gmaps2 = _interopRequireDefault(_gmaps);
