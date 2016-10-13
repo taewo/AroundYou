@@ -22608,13 +22608,7 @@
 	  _createClass(Photo, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        this.props.photoSource.map(function (photo, i) {
-	          return _react2.default.createElement('iframe', { key: i, src: photo.src });
-	        })
-	      );
+	      return _react2.default.createElement('div', null);
 	    }
 	  }]);
 

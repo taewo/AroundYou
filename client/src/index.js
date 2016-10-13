@@ -8,8 +8,8 @@ import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 const rootElement = document.getElementById('wrap');
 ReactDOM.render((<Router history={browserHistory}>
 					<Route path='/' component={App}>
-						<Route path="/upload" component={Upload}/>
-						<Route path="/login" component={Login}/>
+					<Route path="/upload" component={Upload}/>
+					<Route path="/login" component={Login}/>
 						{/*<Route path="*" component={NoMatch}/>*/}
 					</Route>
 				</Router>

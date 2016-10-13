@@ -30,7 +30,7 @@ app.set("port", 7777);
 var db = _mongoose2.default.connection;
 db.on('err', console.error);
 db.once('open', function () {
-	console.log("Connected to mongoDB server!");
+  console.log("Connected to mongoDB server!");
 });
 _mongoose2.default.connect('mongodb://localhost/');
 
@@ -39,9 +39,10 @@ _mongoose2.default.connect('mongodb://localhost/');
 
 app.use(_express2.default.static(__dirname + './../client/public'));
 app.use('*', function (req, res) {
-	res.sendFile(_path2.default.resolve(__dirname, '../client/public', 'index.html'));
+  console.log(_path2.default.parse);
+  res.sendFile(_path2.default.resolve(__dirname, '../client/public', 'index.html'));
 });
 
 var server = app.listen(app.get("port"), function () {
-	console.log("Express listening on port", app.get("port"));
+  console.log("Express listening on port", app.get("port"));
 });

@@ -20,7 +20,8 @@ import Pin from '../build/gmaps.js'
 
 app.use(express.static(__dirname + './../client/public'));
 app.use('*', (req, res)=>{
-	res.sendFile(path.resolve(__dirname, '../client/public', 'index.html'))
+  console.log(path.parse)
+  res.sendFile(path.resolve(__dirname, '../client/public', 'index.html'))
 })
 
 const server = app.listen(app.get("port"), () => {

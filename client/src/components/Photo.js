@@ -7,9 +7,7 @@ class Photo extends React.Component{
   render(){
     return(
       <div>
-      {this.props.photoSource.map((photo,i)=> {
-        return (<iframe key={i} src={photo.src} ></iframe> )
-      })}
+     
       </div>
     )
   }
