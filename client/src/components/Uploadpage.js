@@ -22,6 +22,11 @@ class Uploadpage extends React.Component{
 }
 
 export default Uploadpage;
+console.log('test');
+console.log('test');
+console.log('test');
+console.log('test');
+console.log('test');
 
 // var Uploadpage = React.createClass({
 //     getInitialState: function () {
