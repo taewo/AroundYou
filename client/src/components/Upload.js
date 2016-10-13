@@ -1,12 +1,16 @@
 import React from 'react';
+import Uploadpage from './Uploadpage';
 
 class Upload extends React.Component{
 
   render(){
     return (
       <div>
-        <h1>Upload</h1>
-        <i></i>
+        <a href="/upload">
+        	<h1>
+        		Upload!
+        	</h1>
+        </a>
       </div>
     )
   };

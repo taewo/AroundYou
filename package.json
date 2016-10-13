@@ -26,6 +26,9 @@
     "mongoose": "^4.6.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-dropzone": "^2.2.4",
+    "react-file-uploader": "^0.3.3",
+    "react-fileupload": "^2.4.0",
     "react-gmaps": "^1.5.0",
     "react-router": "^2.8.1"
   },

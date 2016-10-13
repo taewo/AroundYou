@@ -22,6 +22,10 @@ app.use(express.static(__dirname + './../client/public'));
 
 // Server-side routing
 // it takes all url(*) to react-router
+// app.use('/upload', function(req, res){
+// 	res.sendFile(path.resolve(__dirname, '../client/src/components/upload.js'))
+// })
+
 app.use('*', (req, res)=>{
   res.sendFile(path.resolve(__dirname, '../client/public', 'index.html'))
 });
