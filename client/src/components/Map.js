@@ -16,6 +16,7 @@ class Map extends React.Component {
 
   onDragEnd(e) {  //  위경도 콘솔창에 찍어줌.
     console.log('onDragEnd', e.pixel.x);
+    console.log('taewoong')
   };
 
   mapClick(event, map){
